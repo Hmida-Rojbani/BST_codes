@@ -1,0 +1,12 @@
+FUNCTION search_bst(root : ^BST, key : INTEGER) : ^BST
+BEGIN
+    // Base Cases: root is null or key is present at root 
+    IF (root = NULL OR root^.VAL = key ) THEN
+        RETURN root;
+    END_IF
+    IF (root^.VAL < key) THEN
+        RETURN search_bst(root^.RC, key);
+    ELSE
+        RETURN search_bst(root^.LC, key);
+    END_IF
+END

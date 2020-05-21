@@ -1,0 +1,10 @@
+FUNCTION min_bst(root :^BST) : INTEGER
+BEGIN
+    IF (root <> NULL) THEN
+        IF (root^.LC = NULL) THEN
+            RETURN root^.VAL;
+        ELSE
+            RETURN min_bst(root^.LC);
+        END_IF
+    END_IF
+END

@@ -1,0 +1,8 @@
+PROCEDURE display_inorder(root : ^BST)
+BEGIN
+    IF (root <> NULL) THEN
+        display_inorder(root^.LC);
+        Write(root^.VAL)
+        display_inorder(root^.RC);
+    END_IF
+END

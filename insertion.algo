@@ -1,0 +1,27 @@
+// A utility function to create a new BST node 
+FUNCTION newNode(val : INTEGER) : ^BST
+VAR
+    tmp : ^BST;
+BEGIN
+    tmp := createNode(); // memory allocation for a node of type BST
+    tmp^.VAL := val;
+    tmp^.LC := NULL;
+    tmp^.RC := NULL;
+    RETURN tmp;
+END
+/* A utility function to insert a new node with given val in BST */
+FUNCTION insertBST(node : ^BST, val :INTEGER) : ^BST
+BEGIN
+    //If the tree is empty, return a new node
+    IF (node = NULL) THEN
+        RETURN newNode(val);
+    END_IF
+    // Otherwise, recur down the tree
+    IF (val <= node^.VAL) THEN
+        node^.LC := insertBST(node^.LC, val);
+    ELSE
+        node^.RC := insertBST(node^.RC, val);
+    END_IF
+    // return the (unchanged) node pointer 
+    RETURN node ;
+END

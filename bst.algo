@@ -1,0 +1,5 @@
+BST :STRUCT
+                VAL : INTEGER;
+                LC : ^BST; // a pointer to left child
+                RC : ^BST; // a pointer to right child
+            END_STRUCT
